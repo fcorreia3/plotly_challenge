@@ -11,11 +11,11 @@ function buildMetadata(sample) {
     console.log(sample);
   
   // Possible alternative /////////////////////////////////
-    metadata.forEach((sample) => {selector.append("option")
-    .text(sample).property("value", sample);
-    });
+    // metadata.forEach((sample) => {selector.append("option")
+    // .text(sample).property("value", sample);
+    // });
       
-    var firstSample = metadata[0];
+    // var firstSample = metadata[0];
     ///////// * * * * ///////// * * * * ///// * * * //////////
 
     // Use d3 to select the panel with id of `#sample-metadata`
@@ -27,7 +27,7 @@ function buildMetadata(sample) {
     // Use `Object.entries` to add each key and value pair to the panel
     // Hint: Inside the loop, you will need to use d3 to append new
     // tags for each key-value in the metadata.
-    firstSample.forEach(([key, value]) => {
+    Object.entries(firstSample).forEach(([key, value]) => {
       panel.append("p")
       .text(`${key}:${value}`);
     });
